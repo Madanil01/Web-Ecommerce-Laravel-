@@ -8,7 +8,7 @@ class Liga extends Model
 {
     public function products()
     {
-        return $this->hasMany(Product::class, 'liga_id', 'id');
+        return $this->hasMany(Product::class, 'jenis_id', 'id');
     }
 
 }

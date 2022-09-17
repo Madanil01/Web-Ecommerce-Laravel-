@@ -1,11 +1,10 @@
 <div>
-    <nav class="navbar navbar-expand-md navbar-light bg-white">
+    <nav class="navbar navbar-expand-md text-white">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                Jersey<strong>Pedia</strong>
+                <strong><span style="color:black;">Puri</span></strong><strong style="color:#ccb952;">Florist</strong>
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -13,60 +12,67 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home') }}">Home</a>
+                        <strong><a class="nav-link" href="{{ route('home') }}">Home</a></strong>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            List Jersey
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <strong>Jenis Tanaman</strong>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            @foreach($ligas as $liga)
-                            <a class="dropdown-item"
-                                href="{{ route('products.liga', $liga->id) }}">{{ $liga->nama }}</a>
+                            @foreach($jenis as $jenis)
+                            <a class="dropdown-item" href="{{ route('products.jenis', $jenis->id) }}">{{ $jenis->nama }}</a>
                             @endforeach
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('products') }}">Semua Liga</a>
+                            <a class="dropdown-item" href="{{ route('products') }}">Semua Jenis</a>
                         </div>
                     </li>
+                    @guest
+                    @else
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('history') }}">History</a>
+                        <strong><a class="nav-link" href="{{ route('history') }}">History</a></strong>
+
                     </li>
+                    @endguest
                 </ul>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('keranjang') }}">
-                            Keranjang <i class="fas fa-shopping-bag"></i>
-                            @if($jumlah_pesanan !==0)
-                            <span class="badge badge-danger">{{ $jumlah_pesanan }}</span>
-                            @endif
-                        </a>
-                    </li>
+
+
                     @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <strong><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </strong>
                     </li>
                     @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <strong><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></strong>
                     </li>
                     @endif
                     @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <li class="nav-item">
+                        <strong><a class="nav-link" href="{{ route('keranjang') }}">
+                                Keranjang <i class="fas fa-shopping-bag"></i>
+                                @if($jumlah_pesanan !==0)
+                                <span class="badge badge-danger">{{ $jumlah_pesanan }}</span>
+                                @endif
+                            </a></strong>
+
+                    </li>
+                    <li class="nav-item dropdown btn btnnav">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
-
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                        <div class="dropdown-menu  menunav dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('profile') }}">
+                                {{ __('Profile') }}
                             </a>
 
+                            <a class="dropdown-item menunav" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
@@ -78,3 +84,13 @@
         </div>
     </nav>
 </div>
+
+<style>
+    .navbar {
+        background-color: #f8f9fa;
+    }
+
+    .menunav a {
+        color: #ccb952;
+    }
+</style>

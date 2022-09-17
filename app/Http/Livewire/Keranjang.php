@@ -14,25 +14,25 @@ class Keranjang extends Component
 
     public function destroy($id)
     {
-       $pesanan_detail = PesananDetail::find($id);
-       if(!empty($pesanan_detail)) {
-           
-           $pesanan = Pesanan::where('id', $pesanan_detail->pesanan_id)->first();
-           $jumlah_pesanan_detail = PesananDetail::where('pesanan_id', $pesanan->id)->count();
-           if($jumlah_pesanan_detail == 1) 
-           {
-               $pesanan->delete();
-           }else {
-               $pesanan->total_harga = $pesanan->total_harga-$pesanan_detail->total_harga;
-               $pesanan->update();
-           }
+        $pesanan_detail = PesananDetail::find($id);
+        if(!empty($pesanan_detail)) 
+        {   
+            $pesanan = Pesanan::where('id', $pesanan_detail->pesanan_id)->first();
+            $jumlah_pesanan_detail = PesananDetail::where('pesanan_id', $pesanan->id)->count();
+            if($jumlah_pesanan_detail == 1) 
+            {
+                $pesanan->delete();
+            }else {
+                $pesanan->total_harga = $pesanan->total_harga-$pesanan_detail->total_harga;
+                $pesanan->update();
+            }
 
-           $pesanan_detail->delete();
-       }
+            $pesanan_detail->delete();
+        }
 
-       $this->emit('masukKeranjang');
+        $this->emit('masukKeranjang');
 
-       session()->flash('message', 'Pesanan Dihapus');
+        session()->flash('message', 'Pesanan Dihapus');
     }
 
     public function render()

@@ -1,41 +1,238 @@
-body {
+body{
     font-family: 'Montserrat', sans-serif;
-    background-color: white;
+    background-color: #ffffff;
+    
+}
+.btn{
+    background-color: #ccb952;
+    color: #000000;
+}
+.btnnav a{
+    color: #1f2225;
+}
+.btnnav:hover{
+    background-color: #1f2225;
+}
+.headnew{
+    background-color: #f8f9fa;
+    color: #000000;
+}
+.head{
+    background-color: #1f2225;
+    color: #f1f1f1;
+}
+.head label{
+    color: #ccb952;
+}
+.table{
+    background-color: #1f2225;
+    color: #ccb952;
+
+}
+.navbar{
+    background-color: #1f2225;
+    color: white;
+}
+nav a{
+    color: #ccb952;
+    
+}
+nav a:hover{
+    color: white;
+    transition:all .4s ease-out;
+    text-decoration: underline;
+}
+nav span{
+    color: white;
+}
+.nav-admin{
+    margin-top: -5.5rem;
+}
+.dropdown-menu{
+    background-color: #1f2225;
+    color: #ccb952;
+}
+.dropdown-item{
+    color: #ccb952;
+}
+.footer{
+    background-color: #1f2225;
+    color: white;
+}
+
+.cardhomenew{
+    background-color: #f8f9fa;
+    color:black;
+}
+
+.cardhome{
+    background-color: #1f2225;
+    color:#f1f1f1;
+}
+.cardhome:hover{
+    color: #1f2225;
+    background-color:#f1f1f1;
+    transition:all .4s ease-out;
+}
+.homeimage{
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.85);
+    -webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.85);
+    -moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.85);
+}
+.homeimage:hover{
+    box-shadow: 10px -10px 0px 0px rgba(0,0,0,1);
+    -webkit-box-shadow: 10px -10px 0px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 10px -10px 0px 0px rgba(0,0,0,1);
+    transition:all .4s ease-out;
+}
+.checkout{
+    background-color: #1f2225;
+    color: #ccb952;
+}
+.jumbotron {
+    height: 50rem;
+    background-size: cover;
+    margin-top: -7.5rem;
+}
+.jumbotron .display-4{
+    color: #f1f1f1;
+    text-align: center;
+    margin-top: 10rem;
+    font-weight: 250;
+}
+.carousel-inner {
+    height:35rem; 
+    border-radius:1rem;
+}
+.carousel-item {
+    height:35rem; 
+    border-radius:1rem;
+}
+.carousel-item img{
+    height:35rem; 
+    border-radius:1rem;
+}
+
+.shopbtn{
+    background-color: #ccb952;
+    color: #1f2225;
+}
+.shopbtn:hover{
+    color: #ccb952;
+    background-color: #1f2225;
+    transition:all .4s ease-out
+}
+.content{
+    margin-top: -20rem;
 }
 
 .banner img {
     width: 100%;
+    height: 20rem;
+    border-radius: 1rem;
+}
+
+.product{
+    background-color:  #1f2225;
+    color: #f1f1f1;
+}
+
+.homeimage{
+    max-width: 15rem;
+    height: 15rem;
+}
+.product:hover{
+    background-color: #ffffff;
+    color: #1f2225;
+    transition:all .4s ease-out
+}
+.detail {
+    align-items: center;
+    width:30rem;
+    height: 30rem;
+    background-color: #1f2225;
+}
+.hoverbtn{
+    background-color:#ccb952;
+}
+.hoverbtn:hover{
+    background-color: black;
+    color:  #ccb952;
+    transition:all .4s ease-out
+}
+
+.pilih-jenis img{
+    max-height: 10rem;
+    max-width: 10rem;
+}
+.pilih-jenis card{
+    border-radius: 1.5rem;
+}
+.products img{
+    max-height: 10rem;
+    max-width: 10rem;
+}
+.products .card{
     border-radius: 15px;
 }
 
-.pilih-liga img {
-    max-height: 100px;
-}
-
-.pilih-liga .card {
-    border-radius: 15px;
-}
-
-.products .card {
-    border-radius: 15px;
-}
-
-.breadcrumb {
+.breadcrumb{
     background-color: transparent;
     padding: 0;
 }
 
-.breadcrumb .active {
+.breadcrumb .active{
     font-weight: bold;
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
-.btn-dark {
-    border-radius: 10px;
-}
-
-.gambar-product {
-    background-color: #F1F1F1;
+.gambar-product{
+    background-color: #f1f1f1;
     border-width: 0;
-    border-radius: 20px;
+    border-radius: 2rem;
+}
+.navbar-toggler{
+    background-color: #ccb952;
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    border: #f1f1f1;
+}
+
+@media (max-width: 500px) {
+    
+    .jumbotron .display-4{
+        color: #f1f1f1;
+        text-align: center;
+        margin-top: 10rem;
+        font-size: 1.5rem;
+    }
+    .jumbotron {
+        height: 34rem;
+    }
+    .content{
+    margin-top: -7rem;
+    }   
+    .detail {
+        align-items: center;
+        max-width:20rem;
+        max-height: 20rem;
+    }
+    
+    .content{
+        margin-top: -10rem;
+
+    }
+    .carousel-inner {
+        height:15rem; 
+        border-radius:1rem;
+    }
+    .carousel-item {
+        height:15rem; 
+        border-radius:1rem;
+    }
+    .carousel-item img{
+        height:15rem; 
+        border-radius:1rem;
+    }
 }

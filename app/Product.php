@@ -6,15 +6,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    public function liga()
+    protected $table = "products";
+    protected $primarykey = "id";
+    protected $fillable = [
+        'nama', 'harga', 'is_ready', 'keterangan', 'gambar','jenis_id'
+    ]; 
+    public function jenis()
     {
-        return $this->belongsTo(Liga::class, 'liga_id', 'id');
+        return $this->belongsTo(Jenis::class, 'jenis_id', 'id');
     }
 
     public function pesanan_details()
     {
         return $this->hasMany(PesananDetail::class, 'product_id', 'id');
     }
-
-
 }

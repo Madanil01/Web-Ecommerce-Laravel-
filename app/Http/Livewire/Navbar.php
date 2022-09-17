@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Liga;
+use App\Jenis;
 use App\Pesanan;
 use App\PesananDetail;
 use Illuminate\Support\Facades\Auth;
@@ -37,15 +38,15 @@ class Navbar extends Component
             }else {
                 $this->jumlah = 0;
             }
-        }
-       
+        }  
     }
 
     public function render()
     {
         return view('livewire.navbar',[
-            'ligas' => Liga::all(),
+            'jenis' => Jenis::all(),
             'jumlah_pesanan' => $this->jumlah, 
         ]);
+        
     }
 }

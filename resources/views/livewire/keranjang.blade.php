@@ -1,12 +1,21 @@
 <div class="container">
-    <div class="row mt-4 mb-2">
-        <div class="col">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ route('home') }}" class="text-dark">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Keranjang</li>
-                </ol>
-            </nav>
+    <div class="card shadow headnew">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-9">
+                    <h3><strong style="color:black">Keranjang </strong><strong style="color:#ccb952">Belanja</strong></h3>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page" style="color:black">Keranjang</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -20,16 +29,16 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-4">
         <div class="col">
             <div class="table-responsive">
-                <table class="table text-center">
+                <table class="table table-borderless text-center">
                     <thead>
                         <tr>
                             <td>No.</td>
                             <td>Gambar</td>
                             <td>Keterangan</td>
-                            <td>Name Set</td>
+                            <td>Luar Kota</td>
                             <td>Jumlah</td>
                             <td>Harga</td>
                             <td><strong>Total Harga</strong></td>
@@ -42,17 +51,16 @@
                         <tr>
                             <td>{{ $no++ }}</td>
                             <td>
-                                <img src="{{ url('assets/jersey') }}/{{ $pesanan_detail->product->gambar }}" class="img-fluid" width="200">
+                                <img src="{{ url('assets/product') }}/{{ $pesanan_detail->product->gambar }}" class="img-fluid" width="200">
                             </td>
                             <td>
                                 {{ $pesanan_detail->product->nama }}
                             </td>
                             <td>
                                 @if($pesanan_detail->namaset)
-                                    Nama : {{ $pesanan_detail->nama }} <br>
-                                    Nomor : {{ $pesanan_detail->nomor }}
-                                @else 
-                                    - 
+                                {{ $pesanan_detail->nama }} <br>
+                                @else
+                                -
                                 @endif
                             </td>
                             <td>{{ $pesanan_detail->jumlah_pesanan }}</td>
@@ -61,13 +69,13 @@
                             <td>
                                 <i wire:click="destroy({{ $pesanan_detail->id }})" class="fas fa-trash text-danger"></i>
                             </td>
-                        </tr>    
+                        </tr>
                         @empty
                         <tr>
                             <td colspan="7">Data Kosong</td>
-                        </tr>   
+                        </tr>
                         @endforelse
-                        
+
                         @if(!empty($pesanan))
                         <tr>
                             <td colspan="6" align="right"><strong>Total Harga : </strong></td>

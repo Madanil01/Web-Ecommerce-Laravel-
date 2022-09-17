@@ -6,12 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pesanan extends Model
 {
+    
     protected $fillable = [
         'kode_pemesanan',
         'status',
         'total_harga',
         'kode_unik',
         'user_id',
+        'gambar',
+        'resi',
     ];
 
     public function pesanan_details()
