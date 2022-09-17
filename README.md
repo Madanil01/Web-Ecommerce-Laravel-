@@ -6,6 +6,12 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
+##Link hasil project
+http://purifloristidn2023.rf.gd/ (Costumer)
+http://purifloristidn2023.rf.gd/admin/login (Admin)
+
+*Buatan nama database "tanaman"
+*Silahkan import file .sql pada project tersebut
 
 ## About Laravel
 
