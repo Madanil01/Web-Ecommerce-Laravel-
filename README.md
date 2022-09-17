@@ -8,14 +8,12 @@
 </p>
 ## Link hasil project
 
-http://purifloristidn2023.rf.gd/ (Costumer)
+-http://purifloristidn2023.rf.gd/ (Costumer)
+-http://purifloristidn2023.rf.gd/admin/login (Admin)
 
-http://purifloristidn2023.rf.gd/admin/login (Admin)
 
-
-*Buatan nama database "tanaman"
-
-*Silahkan import file .sql pada project tersebut
+-*Buatan nama database "tanaman"
+-*Silahkan import file .sql pada project tersebut
 
 ## About Laravel
 
